@@ -30,3 +30,4 @@ CMakeLists.txt
 .browse.VC.db*
 *.stackdump
 util/Win_Check_Output.txt
+keymap_passwords.h
