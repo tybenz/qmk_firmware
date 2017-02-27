@@ -25,6 +25,7 @@
 #define TY_DBQT LSFT(KC_QUOT)
 #define TY_UND LSFT(KC_MINS)
 #define TY_PLUS LSFT(KC_EQL)
+#define TY_COL LSFT(KC_SCLN)
 
 #define SP_UPLT LCTL(LGUI(KC_LEFT))
 #define SP_UPRT LCTL(LGUI(KC_RGHT))
@@ -40,10 +41,10 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [ALP] = { /* Colemak */
-  {  KC_TAB,   KC_Q,     KC_W,     KC_F,     KC_P,     KC_G,     KC_TRNS,  KC_J,     KC_L,     KC_U,     KC_I,     KC_SCLN,  KC_BSLS  },
+  {  KC_TAB,   KC_Q,     KC_W,     KC_F,     KC_P,     KC_G,     KC_TRNS,  KC_J,     KC_L,     KC_U,     KC_Y,     KC_SCLN,  KC_BSLS  },
   {  KC_LCTL,  KC_A,     KC_R,     KC_S,     KC_T,     KC_D,     KC_TRNS,  KC_H,     KC_N,     KC_E,     KC_I,     KC_O,     KC_ENT   },
-  {  KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_BSPC,  KC_K,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT  },
-  {  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_LALT,  KC_LGUI,  MO(NUM),  KC_SPC,   MO(SYM),  MO(FUN),  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS  }
+  {  KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     MO(SYM),  KC_K,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT  },
+  {  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_LALT,  KC_LGUI,  KC_BSPC,  MO(NUM),  KC_SPC,   MO(FUN),  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS  }
 },
 [NUM]  =         {
   {  KC_ESC,   KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_TRNS,  KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11   },
@@ -52,9 +53,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {  MO(FUN),  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS  }
 },
 [SYM] = {
-  {  KC_ESC,   KC_TRNS,  KC_TRNS,  KC_TRNS,  TY_LCRL,  KC_TRNS,  KC_TRNS,  KC_TRNS,  TY_RCRL,  TY_UND,   TY_PLUS,  KC_TRNS,  M(MAC)   },
+  {  KC_ESC,   KC_TRNS,  KC_TRNS,  KC_TRNS,  TY_LCRL,  KC_TRNS,  KC_TRNS,  KC_TRNS,  TY_RCRL,  KC_MINS,  KC_EQL,   TY_COL,   MO(MAC)   },
   {  TY_TILD,  TY_BANG,  TY_AT,    TY_PND,   TY_DOLL,  TY_PERC,  KC_TRNS,  TY_CART,  TY_AMP,   TY_STAR,  TY_LPR,   TY_RPR,   KC_QUOT  },
-  {  KC_NO,    KC_TRNS,  KC_TRNS,  KC_GRV,   KC_LBRC,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_RBRC,  KC_MINS,  KC_EQL,   TY_DBQT,  KC_NO    },
+  {  KC_NO,    KC_TRNS,  KC_TRNS,  KC_GRV,   KC_LBRC,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_RBRC,  TY_UND,   TY_PLUS,  TY_DBQT,  KC_NO    },
   {  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS  }
 },
 [FUN] = {
@@ -64,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS  }
 },
 [MAC] = {
-  {  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS  },
+  {  RESET,    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS  },
   {  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  M(0),     M(1),     M(2),     M(3),     KC_TRNS  },
   {  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS  },
   {  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS  }

@@ -29,11 +29,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* key matrix size */
 #define MATRIX_ROWS 4
-#define MATRIX_COLS 12
+#define MATRIX_COLS 13
 
 /* Planck PCB default pin-out */
-#define MATRIX_ROW_PINS { D0, D5, B5, B6 }
-#define MATRIX_COL_PINS { F1, F0, B0, C7, F4, F5, F6, F7, D4, D6, B4, D7 }
+#define MATRIX_ROW_PINS { D0, D1, C6, C7 }
+#define MATRIX_COL_PINS { F6, F5, F4, B7, B6, B5, B4, B3, B2, B1, B0, D7, D6 }
 #define UNUSED_PINS
 
 #define BACKLIGHT_PIN B7
@@ -45,7 +45,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define MATRIX_HAS_GHOST
 
 /* number of backlight levels */
-#define BACKLIGHT_LEVELS 3
+//#define BACKLIGHT_LEVELS 3
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCING_DELAY 5
